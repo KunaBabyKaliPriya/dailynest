@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+
+    <title>
+
+       Medicines
+
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="Baby Care Category Page CSS.css">
+    
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+    <style>
+        /* Basic styles for the cart icon */
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: 14px;
+        }
+        body {
+            position: relative; /* To position the cart icon */
+        }
+
+        .btn {
+            border-radius: 15px;
+            color: #fff;
+            padding: 8px 25px;
+            background-color: #4ccd6a;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .btn:hover {
+            color: #78d98f;
+            opacity: 0.8;
+            transition: 0.3s all ease-in;
+        }
+
+    </style>
+    <body>
+        <div class="cart-icon" onclick="window.location.href='Shopping Cart HTML.html'">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+
+        <section id="popular-product">
+            <!--heading----------->
+            <div class="product-heading">
+                <h2 class = 'fruits-heading'>Medicines</h2>
+            </div>
+            <!--box-container------>
+            <div class="product-container">
+                <!--box---------->
+                <div class="product-box" style = "height: 95%;">
+                    <img alt="Cetirizine 10mg" src="https://i.imgur.com/QWMkLQ6.jpgg">
+                    <strong>Cetirizine 10mg-</strong>
+                    <span class="quantity">1 sheet</span>
+                    <span class="price">Rs. 16.10</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Cetirizine 10mg', 16.10,'https://i.imgur.com/QWMkLQ6.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    <!--like-btn------->
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box" style="height: 95%;">
+                    <img alt="CUFRIL-D Cough Syrup" src="https://i.imgur.com/t3jlpYD.jpg">
+                    <strong>CUFRIL-D Cough Syrup</strong>
+                    <span class="quantity">1 sheet</span>
+                    <span class="price">Rs. 88</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('CUFRIL-D Cough Syrup', 88,'https://i.imgur.com/t3jlpYD.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                   
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box" style="height: 95%;">
+                    <img alt="Cheston Cold" src="https://i.imgur.com/KqTyIOv.png">
+                    <strong>Cheston Cold</strong>
+                    <span class="quantity">1 sheet</span>
+                    <span class="price">Rs. 34</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Cheston Cold', 34,'https://i.imgur.com/KqTyIOv.png')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Dolo 650" src="https://i.imgur.com/ZgxivW4.jpg">
+                    <strong>Dolo 650</strong>
+                    <span class="quantity">1 Sheet</span>
+                    <span class="price">Rs. 24.75</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Dolo 650', 24.75,'https://i.imgur.com/ZgxivW4.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Gelusil Chewable Tablets" src="https://i.imgur.com/v7EIJzM.jpg">
+                    <strong>Gelusil Chewable Tablets</strong>
+                    <span class="quantity">1 Sheet</span>
+                    <span class="price">Rs. 15.92</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Gelusil Chewable Tablets', 15.92,'https://i.imgur.com/v7EIJzM.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Metolar XR 50" src="https://i.imgur.com/VfI11ZP.png">
+                    <strong>Metolar XR 50</strong>
+                    <span class="quantity">1 Sheet</span>
+                    <span class="price">Rs. 79.83</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Metolar XR 50',79.83,'https://i.imgur.com/VfI11ZP.png')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <div class="product-box">
+                    <img alt="Azithromicine" src="imgs 2/azithro.png">
+                    <strong>Azithromicine</strong>
+                    <span class="quantity">1 Sheet</span>
+                    <span class="price">Rs.32</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Azithromicine',32,'imgs 2/azithro.png')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <div class="product-box">
+                    <img alt="Omeprajole" src="imgs 2/ome.png">
+                    <strong>Omeprajole</strong>
+                    <span class="quantity">1 Sheet</span>
+                    <span class="price">Rs. 83.83</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Omeprajole',83.83,'imgs 2/ome.png')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <div class="product-box">
+                    <img alt="Rabeprajole" src="imgs 2/Rabilte.png">
+                    <strong>Rabeprajole</strong>
+                    <span class="quantity">1 Sheet</span>
+                    <span class="price">Rs. 49</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Rabeprajole',49,'imgs 2/Rabilte.png')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <div class="product-box">
+                    <img alt="Riboflavin" src="imgs 2/ribo.jpeg">
+                    <strong>Riboflavin</strong>
+                    <span class="quantity">1 Sheet</span>
+                    <span class="price">Rs. 36.23</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Riboflavin',36.23,'imgs 2/ribo.jpeg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <div class="product-box">
+                    <img alt="Vitafusion" src="imgs 2/vitafusion.webp">
+                    <strong>Vitafusion</strong>
+                    <span class="quantity">1 sheet</span>
+                    <span class="price">Rs. 92</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Vitafusion',92,'imgs 2/vitafusion.webp')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <div class="product-box">
+                    <img alt="Riboflavin" src="imgs 2/Riboflavin.webp">
+                    <strong>Riboflavin</strong>
+                    <span class="quantity">1 bottle</span>
+                    <span class="price">Rs. 101</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Riboflavin',101,'imgs 2/Riboflavin.webp')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                
+            </div>
+        </section>
+        <script>
+            function addToCart(name, price, image) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.name === name);
+    
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ name, price, image, quantity: 1 });
+                }
+    
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                alert(name + ' has been added to your cart!');
+            }
+    
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.getElementById('cart-count').innerText = totalCount;
+            }
+    
+            // Update cart count on page load
+            window.onload = updateCartCount;
+        </script>
+
+        <button type="submit" class="btn">
+                                
+            <a href="Home Page HTML.html" style = 'color: white; text-decoration: none;'>
+                
+                Home
+            
+            </a>
+
+        </button>
+    </body>
+
+</html>

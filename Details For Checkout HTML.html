@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="contact-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details for Delivery</title>
+
+    <link href="Details For Checkout CSS.css" rel="stylesheet" type="text/css" />
+    <script src="Details For Checkout JS.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-in {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .contact-in img {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .contact-form {
+            padding: 40px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .contact-form-txt {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .contact-form-btn:hover {
+            background-color: #218838;
+        }
+
+        #error_message {
+            color: red;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="Home Page HTML.html">Home</a>
+    </nav>
+
+    <div class="contact-in">
+        <img src="delivery.webp" alt="Delivery Boy">
+
+        <div class="contact-form">
+            <h1>Details For Delivery</h1>
+            <div id="error_message"></div>
+
+            <form class='address_form' onsubmit="return validate_form();">
+                <input type="text" placeholder="Name" class="contact-form-txt" id='name' required />
+                <input type="text" placeholder="Address" class="contact-form-txt" id='address' required />
+                <input type="email" placeholder="Email-ID" class="contact-form-txt" id='email' required />
+                <input type="text" placeholder="Locality/Apartment" class="contact-form-txt" required />
+                
+                <input type="text" placeholder="Pincode" class="contact-form-txt" id='pincode' pattern="\d{6}" title="Please enter a 6-digit pincode" required />
+
+                <input type="text" placeholder="Contact No." class="contact-form-txt" id='phone' pattern="\d{10}" title="Please enter a 10-digit phone number" required />
+
+                <button type="submit" class="contact-form-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validate_form() {
+            var pincode = document.getElementById("pincode").value;
+            var phone = document.getElementById("phone").value;
+            var error_message = document.getElementById("error_message");
+
+            // Reset error message
+            error_message.innerHTML = "";
+
+            // Validate Pincode (6-digit only)
+            if (!/^\d{6}$/.test(pincode)) {
+                error_message.innerHTML = "Invalid Pincode! Please enter a 6-digit number.";
+                return false;
+            }
+
+            // Validate Phone Number (10-digit only)
+            if (!/^\d{10}$/.test(phone)) {
+                error_message.innerHTML = "Invalid Phone Number! Please enter a 10-digit number.";
+                return false;
+            }
+
+            // Redirect to payment page
+            window.location.href = "Payment HTML.html";
+            return false; // Prevent default form submission
+        }
+    </script>
+
+</body>
+
+</html>

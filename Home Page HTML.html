@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyNest</title>
+    <link rel="stylesheet" type="text/css" href="Home Page CSS.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/fav-icon.png"/>
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+    <script src='Home Page JS.js' defer></script>
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        function navigate(page) {
+            ipcRenderer.send('navigate', page);
+        }
+    </script>
+</head>
+<body>
+        <!--==Navigation================================-->
+        <nav class="navigation">
+
+            
+
+            <!--menu-btn---->
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+
+            <label for="menu-btn" class="menu-icon">
+
+                <span class="nav-icon"></span>
+
+            </label>
+
+            <!--menu-------->
+            <ul class="menu">
+
+                <li>
+                    <a href="Home Page HTML.html" class="active">
+                        
+                        Home
+
+                    </a>
+                
+                </li>
+
+                <li>
+
+                    <a href="#category">
+
+                        Categories
+                    
+                    </a>
+                
+                </li>
+
+                <li>
+
+                    <a href="#popular-bundle-pack">
+                        
+                        Packages
+                    
+                    </a>
+                
+                </li>
+
+                <li>
+                    
+                    <a href="Contact Form HTML.html">
+                        
+                        Contact&nbsp;Us
+                    
+                    </a>
+                
+                </li>
+				
+				<li>
+                    
+                    <a href="Feedback Form HTML.html">
+                        
+                        Feedback
+                    
+                    </a>
+                
+                </li>
+				
+				<li>
+
+					<a href="About Us HTML.html">
+
+						About&nbsp;us
+
+					</a>
+
+                </li>
+
+                <li>
+                    
+                    <a href="#download-app">
+                        
+                        App
+                    
+                    </a>
+                
+                </li>
+
+
+                
+                <li>
+                    
+                    <a href="Login And Registration HTML.html">
+                        
+                        Login
+                    
+                    </a>
+                
+                </li>
+
+				</ul>
+
+            <!--right-nav-(cart-like)-->
+            <div class="right-nav">
+
+                <!--cart----->
+                <a href="Shopping Cart HTML.html" class="cart">
+
+                    <i class="fas fa-shopping-cart"></i>
+
+                        
+                        <span class="cart-count" id="cart-count">0</span>
+                    
+
+
+                </a>
+
+                <!--cart----->
+                <a href="Profile HTML.html" class="user-profile">
+
+                    <i class="fas fa-user"></i>
+
+                    <span>
+
+                        1
+
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+        <!--nav-end--------------------->
+        <!--==Search-banner=======================================-->
+        <section id="search-banner">
+
+            <!--bg--------->
+            <img alt="bg" class="bg-1" src="https://i.imgur.com/h8pXo1s.png">
+
+            <img alt="bg" class="bg-1_rev" src="https://i.imgur.com/h8pXo1s.png">
+
+            <img alt="bg-2" class="bg-2" src="https://i.imgur.com/2smuQIz.png">
+
+            <!--text------->
+            <div class="search-banner-text">
+
+                <h1>
+                    
+                    Order Your daily Groceries
+                
+                </h1>
+
+                <strong>
+                    
+                    #Free Delivery by DailyNest
+                
+                </strong>
+
+                
+
+                <br>
+
+
+            </div>
+
+        </section>
+
+        <!--search-banner-end--------------->
+
+        <h2 class = 'sale-heading'>
+
+            13 Days Sale is Live..!
+
+        </h2>
+
+        <!--==category=========================================-->
+        <section id="category">
+
+            <!--heading---------------->
+            <div class="category-heading">
+
+                <h2>
+                    
+                    Category
+                
+                </h2>
+
+                
+            </div>
+
+            <!--box-container---------->
+            <div class="category-container">
+
+                <!--box---------------->
+                <a class="category-box" href = 'newfruits.html'>
+					<img alt="Fruits and Vegetables" src="https://i.imgur.com/lvk68rp.png">
+					<span>Fruits & <br> Vegetables</span>
+				</a>
+				<!--box---------------->
+                <a class="category-box" href = 'newmed.html'>
+                    <img alt="Medicines" src="https://i.imgur.com/4sjlmg3.png">
+                    <span>Medicine</span>
+                </a>
+                <!--box---------------->
+                <a class="category-box" href="Baby Care Category Page HTML.html">
+                    <img alt="Baby Care Products" src="https://i.imgur.com/uvd01HH.png">
+                    <span>Baby Care</span>
+                </a>
+                <!--box---------------->
+                <a class="category-box" href = 'Office Category Page HTML.html'>
+                    <img alt="Fish" src="https://i.imgur.com/N5a3WUT.png">
+                    <span>Stationary</span>
+                </a>
+                <!--box---------------->
+                <a class="category-box" href = 'Beauty Category Page HTML.html'>
+                    <img alt="Beauty Products" src="https://i.imgur.com/Bm0yLex.png">
+                    <span>Beauty</span>
+                </a>
+                <!--box---------------->
+                <a class="category-box" href = 'Gardening Category Page HTML.html'>
+                    <img alt="Gardening Products" src="https://i.imgur.com/AjGulv5.png">
+                    <span>Gardening</span>
+                </a>
+            </div>
+            
+        </section>
+        <!--category-end----------------------------------->
+        <!--==Products====================================-->
+        <section id="popular-product">
+            <!--heading----------->
+            <div class="product-heading">
+                <h3>Popular Product</h3>
+
+            </div>
+            <!--box-container------>
+            <div class="product-container">
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="apple" src="https://i.imgur.com/vUJ2JKU.png">
+                    <strong>Apple</strong>
+                    <span class="quantity">1 KG</span>
+                    <span class="price">Rs. 99</span>
+                    <!--cart-btn------->
+                    <a href="newfruits.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>                    <!--like-btn------->
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Cheston Cold" src="https://i.imgur.com/KqTyIOv.png">
+                    <strong>Cheston Cold</strong>
+                    <span class="quantity">10 Tablets </span>
+                    <span class="price">Rs.34</span>
+                    <!--cart-btn------->
+                    <a href="newmed.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    <!--like-btn------->
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Johnson's Baby Oil" src="https://i.imgur.com/0LKWxiJ.jpg">
+                    <strong>Johnson's Baby Oil</strong>
+                    <span class="quantity">500 ml</span>
+                    <span class="price">Rs. 425</span>
+                    <!--cart-btn------->
+                    <a href="Baby Care Category Page HTML.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Nivea Body Milk" src="https://i.imgur.com/XroaNlX.jpg">
+                    <strong>Nivea Body Milk</strong>
+                    <span class="quantity">200 ml</span>
+                    <span class="price">Rs. 178</span>
+                    <!--cart-btn------->
+                    <a href="Beauty Category Page HTML.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    <!--like-btn------->
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Watering Can" src="https://i.imgur.com/tB2zQj8.jpg">
+                    <strong>Watering Can</strong>
+                    <span class="quantity">1</span>
+                    <span class="price">Rs. 249</span>
+                    <!--cart-btn------->
+                    <a href="Gardening Category Page HTML.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    <!--like-btn------->
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                <!--box---------->
+                <div class="product-box">   
+                    <img alt="Post It Sticky Notes" src="https://i.imgur.com/tHqNkY2.jpg">
+                    <strong>TPost It Sticky Notes</strong>
+                    <span class="quantity">Pack of 6</span>
+                    <span class="price" data-price="80">Rs. 358</span>
+                    <a href="Office Category Page HTML.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    <!--like-btn------->
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--popular-product-end--------------------->
+        <!--Popular-bundle-pack===================================-->
+        <section id="popular-bundle-pack">
+            <!--heading-------------->
+            <div class="product-heading">
+                <h3>Popular Bundle Pack</h3>
+            </div>
+            <!--box-container------>
+            <div class="product-container">
+                <!--box---------->
+                <div class="product-box">
+                    <img alt=" Big pack" src="https://i.imgur.com/Zm8Xo2j.png">
+                    <strong>Big Pack</strong>
+                    <span class="quantity">Lemon, Tomato, Potato,+4</span>
+                    <span class="price">Rs. 500</span>
+                    <!--cart-btn------->
+                    <a href="" class="cart-btn" onclick="addToCart('Big Pack', 500,'https://i.imgur.com/Zm8Xo2j.png')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    <a class="like-btn" style='text-decoration: none;'>
+                    <!--like-btn------->
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Large Pack" src="Large.jpg">
+                    <strong>Large Pack</strong>
+                    <span class="quantity">Lemon, Tomato, Potato,+2</span>
+                    <span class="price">Rs. 800</span>
+                    <!--cart-btn------->
+                    <a href="" class="cart-btn" onclick="addToCart('Large Pack', 800,'Large.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    <a class="like-btn" style='text-decoration: none;'>
+                    <!--like-btn------->
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="apple" src="https://i.imgur.com/CeVqxe2.png">
+                    <strong>Small-Pack</strong>
+                    <span class="quantity">Lemon,Tomato,Potato (4-each)</span>
+                    <span class="price">Rs. 300</span>
+                    <a href="" class="cart-btn" onclick="addToCart('Small Pack', 300,'https://i.imgur.com/CeVqxe2.png')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    <a class="like-btn" style='text-decoration: none;'>
+                    <!--like-btn------->
+                    <a class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </a>
+                </div>
+                
+        </section>
+        <!--popular-bundle-pack-end-------------------------------->
+        <!--==Clients===============================================-->
+        <section id="clients">
+            <!--heading---------------->
+            <div class="client-heading">
+                <h3>What Our Clients Say</h3>
+            </div>
+            <!--box-container---------->
+            <div class="client-box-container">
+                <!--box------------->
+                <div class="client-box">
+                    <!--==profile===-->
+                    <div class="client-profile">
+                        <!--img--->
+                        <img alt="client" src="https://i.imgur.com/FNVH9z6.jpg">
+                        <!--text-->
+                        <div class="profile-text">
+                            <strong>James</strong>
+                            <span>Investor</span>
+                        </div>
+                    </div>
+                    <!--==Rating======-->
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <!--==comments===-->
+                    <p>Fresh mart is the best. Fresh mart never fails to dissapoint you. Grocery shopping has become so easy with Fresh mart.</Str></p>
+                </div>
+                <!--box------------->
+                <div class="client-box">
+                    <!--==profile===-->
+                    <div class="client-profile">
+                        <!--img--->
+                        <img alt="client" src="https://i.imgur.com/3yv9Hkj.jpg">
+                        <!--text-->
+                        <div class="profile-text">
+                            <strong>Sameer Sharma</strong>
+                            <span>Software Developer</span>
+                        </div>
+                    </div>
+                    <!--==Rating======-->
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <!--==comments===-->
+                    <p>Fresh mart is just amazing. I can buy all my groceries from a single place. The groceries are available at very affordable prices. And, the groceries are delivered at the time slot you choose and prefer.</p>
+                </div>
+                <!--box------------->
+                <div class="client-box">
+                    <!--==profile===-->
+                    <div class="client-profile">
+                        <!--img--->
+                        <img alt="client" src="https://i.imgur.com/Rk5RDey.jpg">
+                        <!--text-->
+                        <div class="profile-text">
+                            <strong>Alexa</strong>
+                            <span>Marketer</span>
+                        </div>
+                    </div>
+                    <!--==Rating======-->
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <!--==comments===-->
+                    <p>At Fresh mart, you can get fresh fruits and vegetables. And it is not only about fruits or vegetables, you can buy all kinds of stuff here.</p>
+                </div>
+            </div>
+        </section>
+        <!--client-section-end---------->
+        <!--==Partnre-logo================================-->
+        <section id="partner">
+            <!--heading------------>
+            <div class="partner-heading">
+                <h3>Our Trusted Partner</h3>
+            </div>
+            <!--logo-container----->
+            <div class="logo-container">
+                <img alt="logo" src="niviea.jpeg">
+                <img alt="logo" src="berado.jpeg">
+                <img alt="logo" src="zepto.jpeg">
+                <img alt="logo" src="himalaya.jpeg">
+            </div>
+        </section>
+        <!--logo-section-end--------------------->
+        <!--==download-app====================================-->
+        <section id="download-app">
+            <!--img----------------------->
+            <div class="app-img">
+                <img alt="app" src="https://i.imgur.com/nxe85eq.png">
+            </div>
+            <!--text---------------------->
+            <div class="download-app-text">
+                <strong>Download App</strong>
+                <p>Grocery shopping made easier. Now, you don't need to open the website for placing orders. Download the <b>DailyNest</b> app from Play Store and App Store to start shopping easily and faster. <br> HAPPY SHOPPING!</b></p>
+                <!--btns------->
+                <div class="download-btns">
+                    <a href="https://www.apple.com/in/app-store/"><img alt="" src="https://i.imgur.com/dMsRGJH.png"></a>
+                    <a href="https://play.google.com/store"><img alt="" src="https://i.imgur.com/puDrZNe.png"></a>
+                </div>
+            </div>
+        </section>
+        
+     
+        <section id="download-app">
+            
+            <!--img----------------------->
+            
+                <img alt="app" src="deli.jpeg" style="right:50% ;height:400px; width:400px">
+            
+            <!--text---------------------->
+            <div class="download-app-text">
+                <strong>Our Delivery Services All Over India...!</strong>
+                <p>Delivery services made simpler! Now, you don't need to visit the website to schedule your deliveries. Download the <b>DailyNest</b> app from Play Store and App Store to manage your deliveries quickly and effortlessly. <br> HAPPY DELIVERING!
+                <div class="download-btns">
+                    <a href="#" style="width:100%;
+                    height: 40px;
+                    background-color: #ecf7ee;
+                    color: #4eb060;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20px;
+                    transition: all ease 0.3s;
+                    border-radius: 20px;">Shop Now</a>
+                </div>
+            </div>
+        </section>
+        <!--download-app-section-end------------------------->
+        <!--==Footer=============================================-->
+        <footer>
+            <div class="footer-container">
+                <!--logo-container------>
+                <div class="footer-logo">
+                    <a href="file:///C:/Users/RAGHAV/Desktop/Coding/Grocery/Logo.png"><span>C</span>GS</a>
+                    <!--social----->
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/?lang=en-in"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <!--links------------------------->
+            <div class="footer-links">
+                <strong>Product</strong>
+                <ul>
+                    <li><a href="#">Grocery</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">New</a></li>
+                </ul>
+            </div>
+            <!--links------------------------->
+            <div class="footer-links">
+                <strong>Category</strong>
+                <ul>
+                    <li><a href="Beauty Category Page HTML.html">Beauty</a></li>
+                    <li><a href="Fruits Category Page HTML.html">Vegetables</a></li>
+                    <li><a href="Baby Care Category Page HTML.html">Baby</a></li>
+                    <li><a href="Medicine Category Page HTML.html">Medicine</a></li>
+                </ul>
+            </div>
+            <!--links-------------------------->
+            <div class="footer-links">
+                <strong>Contact</strong>
+                <ul>
+                    <li><a href="#">Phone : +91 7601053540</a></li>
+                    <li><a href="#">Email : freshmart@gmail.com</a></li>
+                </ul>
+				<br><p style="color: aliceblue;">Copyright ©2024 | All Rights Reserved</p>
+            </div>
+            </div>
+        </footer>
+        
+        <script>
+            function addToCart(name, price, image) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.name === name);
+    
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ name, price, image, quantity: 1 });
+                }
+    
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                alert(name + ' has been added to your cart!');
+            }
+    
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.getElementById('cart-count').innerText = totalCount;
+            }
+    
+            // Update cart count on page load
+            window.onload = updateCartCount;
+        </script>
+
+    </body>
+</html>

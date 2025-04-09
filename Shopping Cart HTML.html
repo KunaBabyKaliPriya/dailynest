@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="Shopping Cart CSS.css">
+    <script src="https://kit.fontawesome.com/9088cc6401.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #c8efd1;
+            overflow: hidden;
+            height: 100vh; /* Prevent scrolling the body */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        h1 {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .cart {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto; /* Allow scrolling within the cart */
+            height: calc(100vh - 100px); /* Adjust height dynamically to fit */
+            padding-bottom: 10px;
+        }
+
+        .products {
+            flex: 0.75;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            display: flex;
+            align-items: center; /* Align product items in a row */
+            justify-content: space-between; /* Space out items to push Remove button to the right */
+            margin-bottom: 10px;
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: 0.3s all ease;
+        }
+
+        .product:hover {
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transform: scale(1.01);
+        }
+
+        .product img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .product-info {
+            flex-grow: 1; /* Allows the product info to take up available space */
+            margin-right: 20px; /* Adds space between the info and the Remove button */
+        }
+
+        .remove-btn, .increase-btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .remove-btn:hover, .increase-btn:hover {
+            background-color: white;
+            color: red;
+            font-weight: 600;
+            border: 1px solid red;
+        }
+
+        .cart-total {
+            flex: 0.25;
+            margin-left: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1.5px solid black;
+            border-radius: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            bottom: 0;
+        }
+
+        .cart-total p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+
+        .cart-total a {
+            display: block;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            background-color: #32b350;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .cart-total a:hover {
+            background-color: #74d88b;
+        }
+
+        /* Mobile responsive styles */
+        @media screen and (max-width: 700px) {
+            .product {
+                height: 150px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .product img {
+                width: 200px;
+                height: 150px;
+            }
+            .remove-btn {
+                align-self: flex-end;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .cart {
+                flex-direction: column;
+            }
+            .cart-total {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <div class="cart">
+            <div class="products" id="productList"></div>
+            <div class="cart-total">
+                <p>
+                    <span>Total Price</span>
+                    <span id="total-price">Rs. 0</span>
+                </p>
+                <p>
+                    <span>No. of Items</span>
+                    <span id="total-items">0</span>
+                </p>
+                <a href="Details For Checkout HTML.html">Proceed to Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productList = document.getElementById('productList');
+            const totalPriceElement = document.getElementById('total-price');
+            const totalItemsElement = document.getElementById('total-items');
+
+            productList.innerHTML = '';
+            let totalPrice = 0;
+            let totalItems = 0;
+
+            cart.forEach((item, index) => {
+                totalPrice += item.price * item.quantity;
+                totalItems += item.quantity;
+
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Price: Rs. ${item.price}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                    </div>
+                    <button class="increase-btn" onclick="increaseQuantity(${index})">ADD</button>
+                    <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                `;
+                productList.appendChild(productDiv);
+            });
+
+            totalPriceElement.innerText = `Rs. ${totalPrice}`;
+            totalItemsElement.innerText = totalItems;
+        }
+
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1; // Decrease quantity by 1 if greater than 1
+            } else {
+                cart.splice(index, 1); // Remove product completely if quantity is 1
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function increaseQuantity(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity += 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Beauty Products</title>
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Beauty Category Page CSS.css">
+    <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
+    <style>
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: 14px;
+        }
+        body {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <section id="popular-product">
+        <h2>Beauty Products</h2>
+        <div class="product-container">
+            <div class="product-box">
+                <img alt="Lakme Blush and Glow Face Wash" src="https://i.imgur.com/RulBeyf.jpg">
+                <strong>Lakme Blush and Glow Face Wash</strong>
+                <span class="price" data-price="144">Rs. 144</span>
+                <button onclick="addToCart('Lakme Blush and Glow Face Wash', 144, 'https://i.imgur.com/RulBeyf.jpg')">Add to Cart</button>
+            </div>
+            <!-- Add more products here -->
+        </div>
+    </section>
+
+    <script>
+        function addToCart(name, price, image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name, price, image, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(`${name} has been added to your cart!`);
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+        }
+
+        window.onload = updateCartCount;
+    </script>
+</body>
+</html>

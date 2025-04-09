@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="Profile CSS.css">
+    <script src="https://kit.fontawesome.com/cacf32ff12.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+</head>
+<body>
+    <div class="container">
+        <div class="leftbox">
+            <nav>
+                <a onclick="tabs(0)" class="tab active">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a onclick="tabs(1)" class="tab">
+                    <i class="far fa-credit-card"></i>
+                </a>
+                <a onclick="tabs(2)" class="tab">
+                    <i class="fas fa-tv"></i>
+                </a>
+                <a onclick="tabs(3)" class="tab">
+                    <i class="fas fa-tasks"></i>
+                </a>
+                <a onclick="tabs(4)" class="tab">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </nav>
+        </div>
+        <div class="rightbox">
+            <div class="profile tabShow">
+                <form onsubmit="return submitForm(event)" id="personal-form">
+                    <h1>Personal Information</h1>
+                    <div class="form-group">
+                        <h2>Name:</h2>
+                        <input type="text" 
+                               id="name" 
+                               name="name" 
+                               class="input" 
+                               placeholder="Please enter your full name" 
+                               pattern="[A-Za-z ]{2,30}" 
+                               title="Name should only contain letters and spaces"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <h2>Gender:</h2>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="others" name="gender" value="others">
+                        <label for="others">Others</label>
+                    </div>
+                    <div class="form-group">
+                        <h2>Date of Birth:</h2>
+                        <input type="date" 
+                               id="dob" 
+                               name="dob" 
+                               max="2025-03-28"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <h2>Email:</h2>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               class="input" 
+                               placeholder="Ex: priya@gmail.com" 
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <h2>Password:</h2>
+                        <input type="password" 
+                               id="password" 
+                               name="password" 
+                               class="input" 
+                               pattern=".{8,}" 
+                               title="Password must be at least 8 characters long"
+                               required>
+                    </div>
+                    <input type="submit" value="Update" class="submit-btn">
+                </form>
+            </div>
+            <div class="Payment tabShow">
+                <form onsubmit="return submitForm(event)" id="shipment-form">
+                    <h1>Shipment Information</h1>
+                    <div class="form-group">
+                        <h2>Billing Address:</h2>
+                        <input type="text" 
+                               id="address" 
+                               name="address" 
+                               class="input" 
+                               placeholder="Ex: 402, Sector 19, Noida, Uttar Pradesh" 
+                               pattern=".{10,100}" 
+                               title="Address should be between 10-100 characters"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <h2>Pincode:</h2>
+                        <input type="text" 
+                               id="pincode" 
+                               name="pincode" 
+                               class="input" 
+                               placeholder="Ex: 190125" 
+                               pattern="[0-9]{6}" 
+                               title="Pincode must be 6 digits"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <h2>Last Order Shipped On:</h2>
+                        <input type="date" 
+                               id="shipment-date" 
+                               name="shipment-date" 
+                               max="2025-03-28"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <h2>Redeem Card:</h2>
+                        <input type="text" 
+                               id="gift-code" 
+                               name="gift-code" 
+                               class="input" 
+                               placeholder="Enter gift code" 
+                               pattern="[A-Za-z0-9-]{6,20}" 
+                               title="Gift code should be 6-20 alphanumeric characters"
+                               required>
+                    </div>
+                    <input type="submit" value="Update" class="submit-btn">
+                </form>
+            </div>
+            <div class="Subscription tabShow">
+                <form onsubmit="return submitForm(event)" id="subscription-form">
+                    <h1>Subscription Information</h1>
+                    <div class="form-group">
+                        <h2>Payment Date:</h2>
+                        <input type="date" 
+                               id="payment-date" 
+                               name="payment-date" 
+                               value="2021-12-10"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <h2>Date of Next Payment:</h2>
+                        <input type="date" 
+                               id="next-payment" 
+                               name="next-payment" 
+                               value="2022-12-10"
+                               min="2021-12-11"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <h2>Plan:</h2>
+                        <select id="plan" name="plan" required>
+                            <option value="yearly">Yearly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="quarterly">Quarterly</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Update" class="submit-btn">
+                </form>
+            </div>
+            <div class="Privacy tabShow">
+                <form onsubmit="return submitForm(event)">
+                    <h1>Privacy Setting</h1>
+                    <h2>Manage Email Notification</h2>
+                    <input type="radio" name="email-notif" required>
+                    <label>Enable</label><br>
+                    <input type="radio" name="email-notif">
+                    <label>Disable</label><br>
+                    <h2>Manage Privacy Settings</h2>
+                    <input type="radio" name="privacy" required>
+                    <label>Public</label><br>
+                    <input type="radio" name="privacy">
+                    <label>Private</label><br>
+                    <h2>Terms Of Use</h2>
+                    <input type="checkbox" required>
+                    <label>I agree to the terms of use</label><br>
+                    <input type="submit" value="update">
+                </form>
+            </div>
+            <div class="settings tabShow">
+                <form onsubmit="return submitForm(event)">
+                    <h1>Account Setting</h1>
+                    <h2>Hold Subscription</h2>
+                    <input type="radio" name="hold" required>
+                    <label>Yes</label><br>
+                    <input type="radio" name="hold">
+                    <label>No</label><br>
+                    <h2>Cancel Subscription</h2>
+                    <input type="radio" name="cancel" required>
+                    <label>Yes</label><br>
+                    <input type="radio" name="cancel">
+                    <label>No</label><br>
+                    <h2>Your Devices</h2>
+                    <input type="text" class="input" placeholder="Enter device name" required>
+                    <h2>Referrals</h2>
+                    <input type="email" class="input" placeholder="Enter referral email" required>
+                    <input type="submit" value="update">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="Profile JS.js"></script>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevents the form from submitting normally
+            alert("Your form has been updated successfully");
+            event.target.reset(); // Clears all form fields
+            return false;
+        }
+    </script>
+
+    <div class="back-home">
+        <a href="Home Page HTML.html">Back to Home</a>
+    </div>
+</body>
+</html>

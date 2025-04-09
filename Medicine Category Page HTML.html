@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicines</title>
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Medicine Category Page CSS.css">
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #popular-product { padding: 20px; }
+        .product-heading { text-align: center; margin-bottom: 20px; }
+        .product-container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .product-box { border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 10px; width: 150px; text-align: center; }
+        .product-box img { width: 100px; height: auto; }
+        .cart-btn, .like-btn { display: block; margin: 5px 0; }
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cart Icon -->
+<div class="cart-icon" onclick="window.location.href='Shopping Cart HTML.html'">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cart-count">0</span>
+</div>
+
+<section id="popular-product">
+    <div class="product-heading">
+        <h2 class='fruits-heading'>Medicines</h2>
+    </div>
+    <div class="product-container">
+        <!-- Each product box -->
+        <div class="product-box" data-name="Cetirizine 10mg" data-price="16.10">
+            <img alt="Cetirizine" src="https://i.imgur.com/QWMkLQ6.jpg">
+            <strong>Cetirizine 10mg</strong>
+            <span class="quantity">10 Tablets</span>
+            <span class="price">Rs. 16.10</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Cetirizine 10mg', 16.10)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="CUFRIL-D Cough Syrup" data-price="88">
+            <img alt="CUFRIL-D Cough Syrup" src="https://i.imgur.com/t3jlpYD.jpg">
+            <strong>CUFRIL-D Cough Syrup</strong>
+            <span class="quantity"></span>
+            <span class="price">Rs. 88</span>
+            <a href="#" class="cart-btn" onclick="addToCart('CUFRIL-D Cough Syrup', 88)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Cheston Cold" data-price="34">
+            <img alt="Cheston Cold" src="https://i.imgur.com/KqTyIOv.png">
+            <strong>Cheston Cold</strong>
+            <span class="quantity">10 Tablets</span>
+            <span class="price">Rs. 34</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Cheston Cold', 34)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Dolo 650" data-price="24.75">
+            <img alt="Dolo 650" src="https://i.imgur.com/ZgxivW4.jpg">
+            <strong>Dolo 650</strong>
+            <span class="quantity">15 Tablets</span>
+            <span class="price">Rs. 24.75</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Dolo 650', 24.75)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Metolar XR 50" data-price="77.66">
+            <img alt="Metolar XR 50" src="https://i.imgur.com/VfI11ZP.png">
+            <strong>Metolar XR 50</strong>
+            <span class="quantity">15 Tablets</span>
+            <span class="price">Rs. 77.66</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Metolar XR 50', 77.66)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Gelusil Chewable Tablets" data-price="15.92">
+            <img alt="Gelusil Tablets" src="https://i.imgur.com/v7EIJzM.jpg">
+            <strong>Gelusil Chewable Tablets</strong>
+            <span class="quantity">10 Tablets</span>
+            <span class="price">Rs. 15.92</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Gelusil Chewable Tablets', 15.92)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+
+        <div class="product-box" data-name="Gelusil Chewable Tablets" data-price="15.92">
+            <img alt="Gelusil Tablets" src="imgs 2/azithro.png">
+            <strong>Gelusil Chewable Tablets</strong>
+            <span class="quantity">10 Tablets</span>
+            <span class="price">Rs. 15.92</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Gelusil Chewable Tablets', 15.92,'imgs 2/azithro.png')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'>
+        </div>
+
+        <div class="product-box" data-name="Gelusil Chewable Tablets" data-price="15.92">
+            <img alt="Gelusil Tablets" src="https://i.imgur.com/v7EIJzM.jpg">
+            <strong>Gelusil Chewable Tablets</strong>
+            <span class="quantity">10 Tablets</span>
+            <span class="price">Rs. 15.92</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Gelusil Chewable Tablets', 15.92)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        
+        <div class="product-box" data-name="Gelusil Chewable Tablets" data-price="15.92">
+            <img alt="Gelusil Tablets" src="https://i.imgur.com/v7EIJzM.jpg">
+            <strong>Gelusil Chewable Tablets</strong>
+            <span class="quantity">10 Tablets</span>
+            <span class="price">Rs. 15.92</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Gelusil Chewable Tablets', 15.92)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+    </div>
+</section>
+
+<script>
+    function addToCart(name, price, image) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.name === name);
+
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({ name, price, image, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        alert(`${name} has been added to your cart!`);
+    }
+
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cart-count').innerText = totalCount;
+    }
+
+    window.onload = updateCartCount;
+</script>
+
+</body>
+</html>

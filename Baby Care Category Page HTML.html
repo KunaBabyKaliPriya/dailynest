@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Baby Care Products</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Baby Care Category Page CSS.css">
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+    <style>
+        /* Basic styles for the cart icon */
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: 14px;
+        }
+        body {
+            position: relative; /* To position the cart icon */
+        }
+
+        .btn {
+            border-radius: 15px;
+            color: #fff;
+            padding: 8px 25px;
+            background-color: #4ccd6a;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .btn:hover {
+            color: #78d98f;
+            opacity: 0.8;
+            transition: 0.3s all ease-in;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="cart-icon" onclick="window.location.href='Shopping Cart HTML.html'">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <section id="popular-product">
+        <div class="product-heading">
+            <h2 class='fruits-heading'>Baby Care Products</h2>
+        </div>
+        <div class="product-container">
+            <div class="product-box">
+                <img alt="Johnson's Baby Oil" src="https://i.imgur.com/0LKWxiJ.jpg">
+                <strong>Johnson's Baby Oil</strong>
+                <span class="quantity">500 ml</span>
+                <span class="price" data-price="425">Rs. 425</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Johnson\'s Baby Oil', 425, 'https://i.imgur.com/0LKWxiJ.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Little's Baby Wipes" src="https://i.imgur.com/6rlktPI.jpg">
+                <strong>Little's Baby Wipes</strong>
+                <span class="quantity">80 Wipes</span>
+                <span class="price" data-price="95">Rs. 95</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Little\'s Baby Wipes', 95, 'https://i.imgur.com/6rlktPI.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            
+            <div class="product-box">
+                <img alt="Mama Earth Baby Moisturizer" src="https://i.imgur.com/DEONooZ.jpg">
+                <strong>Mama Earth Baby Moisturizer</strong>
+                <span class="quantity">400 ml</span>
+                <span class="price" data-price="339.15">Rs. 339.15</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Mama Earth Baby Moisturizer', 339.15, 'https://i.imgur.com/DEONooZ.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+              
+            </div>
+            <div class="product-box">
+                <img alt="Himalaya Baby Shampoo" src="https://i.imgur.com/fuAMCYN.jpg">
+                <strong>Himalaya Baby Shampoo</strong>
+                <span class="quantity">400 ml</span>
+                <span class="price" data-price="230">Rs. 230</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Himalaya Baby Shampoo', 230, 'https://i.imgur.com/fuAMCYN.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Johnson's Baby Powder" src="https://i.imgur.com/HsECirZ.jpg">
+                <strong>Johnson's Baby Powder</strong>
+                <span class="quantity">200 g</span>
+                <span class="price" data-price="155">Rs. 155</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Johnson\'s Baby Powder', 155, 'https://i.imgur.com/HsECirZ.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Pampers Baby Pants" src="https://i.imgur.com/97mm2rX.jpg">
+                <strong>Pampers Baby Pants</strong>
+                <span class="quantity">58 Pants</span>
+                <span class="price" data-price="699">Rs. 699</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Pampers Baby Pants', 699, 'https://i.imgur.com/97mm2rX.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Cerlac" src="babycare images3/cerlac_nestle.jpg">
+                <strong>Cerlac</strong>
+                <span class="quantity">1</span>
+                <span class="price" data-price="200">Rs. 200</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Cerlac', 200, 'babycare images3/cerlac_nestle.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Digital Bottle Warmer" src="babycare images3/behance_Chicco Digital Bottle Warmer & Sterilizer.png">
+                <strong>Digital Bottle Warmer</strong>
+                <span class="quantity">1</span>
+                <span class="price" data-price="210">Rs. 210</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Digital Bottle Warmer', 210, 'babycare images3/behance_Chicco Digital Bottle Warmer & Sterilizer.png')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Wooden High Chair" src="babycare images3/Abiie Beyond Wooden High Chair.png">
+                <strong>Wooden High Chair</strong>
+                <span class="quantity">1</span>
+                <span class="price" data-price="950">Rs. 950</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Wooden High Chair', 950, 'babycare images3/Abiie Beyond Wooden High Chair.png')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Baby Cloth Wipes" src="babycare images3/GROVIA_babyclothwipes.jpg">
+                <strong>Baby Cloth Wipes</strong>
+                <span class="quantity">1</span>
+                <span class="price" data-price="100">Rs. 100</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Baby Cloth Wipes', 100, 'babycare images3/GROVIA_babyclothwipes.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Toddler Bib" src="babycare images3/KiddyStar Toddler Bib.jpg">
+                <strong>Toddler Bib</strong>
+                <span class="quantity">1</span>
+                <span class="price" data-price="300">Rs. 300</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Toddler Bib', 300, 'babycare images3/KiddyStar Toddler Bib.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Johnsons_babycare" src="babycare images3/johnsons_babycare.png">
+                <strong>Johnsons_babycare</strong>
+                <span class="quantity">1</span>
+                <span class="price" data-price="250">Rs. 250</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Johnsons_babycare', 250, 'babycare images3/johnsons_babycare.png')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <script>
+        function addToCart(name, price, image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name, price, image, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(name + ' has been added to your cart!');
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+        }
+
+        // Update cart count on page load
+        window.onload = updateCartCount;
+    </script>
+ 
+    <button type="submit" class="btn">
+                            
+        <a href="Home Page HTML.html" style = 'color: white; text-decoration: none;'>
+            
+            Home
+        
+        </a>
+
+    </button>
+</body>
+</html>

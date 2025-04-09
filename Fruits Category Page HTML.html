@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits and Vegetables</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Baby Care Category Page CSS.css">
+    <link rel="stylesheet" type="text/css" href="Fruits Category Page CSS.css">
+
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+    <style>
+        /* Add some basic styling here for better visualization */
+        body { font-family: Arial, sans-serif; }
+        #popular-product { padding: 20px; }
+        .product-heading { text-align: center; margin-bottom: 20px; }
+        .product-container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .product-box { border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 10px; width: 150px; text-align: center; }
+        .product-box img { width: 100px; height: auto; }
+        .cart-btn, .like-btn { display: block; margin: 5px 0; }
+
+        /* Cart icon styles */
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cart Icon -->
+<div class="cart-icon" onclick="window.location.href='Shopping Cart HTML.html'">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</div>
+
+<section id="popular-product">
+    <div class="product-heading">
+        <h2 class='fruits-heading'>Fruits and Vegetables</h2>
+    </div>
+    <div class="product-container">
+        <!-- Each product box -->
+        <div class="product-box" data-name="Apple" data-price="100">
+            <img alt="apple" src="https://i.imgur.com/vUJ2JKU.png">
+            <strong>Apple</strong>
+            <span class="quantity">1 KG</span>
+            <span class="price">Rs. 100</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Apple', 100)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Chili" data-price="80">
+            <img alt="chili" src="https://i.imgur.com/rFhSMZN.png">
+            <strong>Chili</strong>
+            <span class="quantity">1 KG</span>
+            <span class="price">Rs. 80</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Chili', 80)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Onion" data-price="50">
+            <img alt="onion" src="https://i.imgur.com/sGLggWL.jpg">
+            <strong>Onion</strong>
+            <span class="quantity">1 KG</span>
+            <span class="price">Rs. 50</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Onion', 50)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Potato" data-price="60">
+            <img alt="potato" src="https://i.imgur.com/WFjH6ui.png">
+            <strong>Potato</strong>
+            <span class="quantity">1 KG</span>
+            <span class="price">Rs. 60</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Potato', 60)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Oranges" data-price="80">
+            <img alt="oranges" src="https://i.imgur.com/5nFAIJ8.jpg">
+            <strong>Oranges</strong>
+            <span class="quantity">1 KG</span>
+            <span class="price">Rs. 80</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Oranges', 80)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        <div class="product-box" data-name="Tomato" data-price="80">
+            <img alt="tomato" src="https://i.imgur.com/8l5hDhS.png">
+            <strong>Tomato</strong>
+            <span class="quantity">1 KG</span>
+            <span class="price">Rs. 80</span>
+            <a href="#" class="cart-btn" onclick="addToCart('Tomato', 80)"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+            <a class="like-btn" style='text-decoration: none;'><i class="far fa-heart"></i></a>
+        </div>
+        
+               
+    </div>
+</section>
+
+<script>
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cartCount').innerText = totalItems;
+    }
+
+    function addToCart(productName, productPrice) {
+        // Get the current cart from localStorage or create a new one
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Check if the product already exists in the cart
+        const existingProduct = cart.find(item => item.name === productName);
+        if (existingProduct) {
+            existingProduct.quantity += 1; // Increase quantity
+        } else {
+            // Add new product
+            cart.push({ name: productName, price: productPrice, quantity: 1,image });
+        }
+        
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Update cart count
+        updateCartCount();
+
+        // Alert the user
+        alert(`${productName} has been added to your cart.`);
+    }
+
+    // Update cart count on page load
+    document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+</body>
+</html>

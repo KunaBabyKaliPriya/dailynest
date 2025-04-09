@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+
+    <title>
+
+        Office Products
+
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="Baby Care Category Page CSS.css">
+    
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+    <style>
+        /* Basic styles for the cart icon */
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: 14px;
+        }
+        body {
+            position: relative; /* To position the cart icon */
+        }
+
+        .btn {
+            border-radius: 15px;
+            color: #fff;
+            padding: 8px 25px;
+            background-color: #4ccd6a;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .btn:hover {
+            color: #78d98f;
+            opacity: 0.8;
+            transition: 0.3s all ease-in;
+        }
+
+    </style>
+    <body>
+        <div class="cart-icon" onclick="window.location.href='Shopping Cart HTML.html'">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+
+        <section id="popular-product">
+            <!--heading----------->
+            <div class="product-heading">
+                <h2 class = 'fruits-heading'>Office Products</h2>
+            </div>
+            <!--box-container------>
+            <div class="product-container">
+                <!--box---------->
+                <div class="product-box" style = "height: 95%;">
+                    <img alt="Kangaroo Stapler No.-10" src="https://i.imgur.com/mZtkksq.jpg">
+                    <strong>Kangaroo Stapl10er No.-10-</strong>
+                    <span class="quantity">5</span>
+                    <span class="price">Rs. 210</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Kangaroo Stapl10er No.-10', 210,'https://i.imgur.com/mZtkksq.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    <!--like-btn------->
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box" style="height: 95%;">
+                    <img alt="Kangaroo Punching Machine" src="https://i.imgur.com/KkYKE2x.jpg">
+                    <strong>Kangaroo Punching Machine</strong>
+                    <span class="quantity">1</span>
+                    <span class="price">Rs. 142</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Kangaroo Punching Machine', 142,'https://i.imgur.com/KkYKE2x.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                   
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box" style="height: 95%;">
+                    <img alt="Natraj HB Pencils" src="https://i.imgur.com/fFUTngw.jpg">
+                    <strong>Natraj HB Pencils</strong>
+                    <span class="quantity">Pack of 10</span>
+                    <span class="price">Rs. 300</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Nataraj HB Pencils', 300,'https://i.imgur.com/fFUTngw.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Natraj Ball Pens" src="https://i.imgur.com/yl5NWbN.jpg">
+                    <strong>Natraj Ball Pens</strong>
+                    <span class="quantity">Pack of 10</span>
+                    <span class="price">Rs. 167</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Nataraj Ball Pens', 167,'https://i.imgur.com/yl5NWbN.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Post It Sticky Notes" src="https://i.imgur.com/tHqNkY2.jpg">
+                    <strong>Post It Sticky Notes</strong>
+                    <span class="quantity">Pack of 6</span>
+                    <span class="price">Rs. 358</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Post It Sticky Note', 358,'https://i.imgur.com/tHqNkY2.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                    
+                </div>
+                <!--box---------->
+                <div class="product-box">
+                    <img alt="Kangaroo Stapler Pins No.-10" src="https://i.imgur.com/BZfAFQm.jpg">
+                    <strong>Kangaroo Stapler Pins No.-10</strong>
+                    <span class="quantity">Pack of 5</span>
+                    <span class="price">Rs. 237</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('Kangaroo Stapler Pins No-10', 237,'https://i.imgur.com/BZfAFQm.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+
+                <div class="product-box">
+                    <img alt="penholder" src="images1/penholder.jpg">
+                    <strong>penholder</strong>
+                    <span class="quantity">1</span>
+                    <span class="price">Rs. 99</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('penholder', 99,'images1/penholder.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+
+                <div class="product-box">
+                    <img alt="calculator" src="images1/calculator.jpg">
+                    <strong>calculator</strong>
+                    <span class="quantity">1</span>
+                    <span class="price">Rs. 999</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('calculator', 237,'images1/calculator.jpg')"> <i class="fas fa-shopping-bag"></i> Add to Cart</a>
+                    
+                </div>
+
+                <div class="product-box">
+                    <img alt="drawingpins" src="images1/drawingpins.png">
+                    <strong>drawingpins</strong>
+                    <span class="quantity">Pack of 5</span>
+                    <span class="price">Rs. 49</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('drawingpins', 49,'images1/drawingpins.png')"> 
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                </div>
+
+                <div class="product-box">
+                    <img alt="fileholder" src="images1/fileholder.jpg">
+                    <strong>fileholder</strong>
+                    <span class="quantity">1</span>
+                    <span class="price">Rs. 150</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('fileholder', 150,'images1/fileholder.jpg')"> 
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                </div>
+
+                <div class="product-box">
+                    <img alt="fountain_pen" src="images1/fountain_pen.jpg">
+                    <strong>fountain_pen</strong>
+                    <span class="quantity">1</span>
+                    <span class="price">Rs. 199</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('fountain_pen', 199,'images1/fountain_pen.jpg')"> 
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                </div>
+
+                <div class="product-box">
+                    <img alt="rubberstamp" src="images1/rubberstamp.jpg">
+                    <strong>rubberstamp</strong>
+                    <span class="quantity">1</span>
+                    <span class="price">Rs. 250</span>
+                    <!--cart-btn------->
+                    <a href="#" class="cart-btn" onclick="addToCart('rubberstamp', 250,'images1/rubberstamp.jpg')"> 
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        <script>
+            function addToCart(name, price, image) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.name === name);
+    
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ name, price, image, quantity: 1 });
+                }
+    
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                alert(name + ' has been added to your cart!');
+            }
+    
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.getElementById('cart-count').innerText = totalCount;
+            }
+    
+            // Update cart count on page load
+            window.onload = updateCartCount;
+        </script>
+
+        <button type="submit" class="btn">
+                                
+            <a href="Home Page HTML.html" style = 'color: white; text-decoration: none;'>
+                
+                Home
+            
+            </a>
+
+        </button>
+    </body>
+
+</html>

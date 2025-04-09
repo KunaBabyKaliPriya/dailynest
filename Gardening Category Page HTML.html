@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gardening Products</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Baby Care Category Page CSS.css">
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+    <style>
+        /* Basic styles for the cart icon */
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: 14px;
+        }
+        body {
+            position: relative; /* To position the cart icon */
+        }
+
+        .btn {
+            border-radius: 15px;
+            color: #fff;
+            padding: 8px 25px;
+            background-color: #4ccd6a;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .btn:hover {
+            color: #78d98f;
+            opacity: 0.8;
+            transition: 0.3s all ease-in;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="cart-icon" onclick="window.location.href='Shopping Cart HTML.html'">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <section id="popular-product">
+        <div class="product-heading">
+            <h2 class='fruits-heading'>Gardening Products</h2>
+        </div>
+        <div class="product-container">
+            <div class="product-box">
+                <img alt="Gardening Gloves" src="https://i.imgur.com/dBujtOd.jpg">
+                <strong>Gardening Gloves</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="160">Rs. 160</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Gardening Gloves', 160, 'https://i.imgur.com/dBujtOd.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Watering Can" src="https://i.imgur.com/tB2zQj8.jpg">
+                <strong>Watering Can</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="249">Rs. 249</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Watering Can', 249, 'https://i.imgur.com/tB2zQj8.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Unigrow Manure" src="https://i.imgur.com/xguc80f.jpg">
+                <strong>Unigrow Manure</strong>
+                <span class="quantity">900 g</span>
+                <span class="price" data-price="196">Rs. 196</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Unigrow Manure', 196, 'https://i.imgur.com/xguc80f.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Axe" src="images1/axe.jpg">
+                <strong>Axe</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="300">Rs. 300</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Axe', 300, 'images1/axe.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Flowerpot" src="images1/flowerpot.jpg">
+                <strong>Flowerpot</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="249">Rs. 249</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Flowerpot', 249, 'images1/flowerpot.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Hoe" src="images1/hoe.jpg">
+                <strong>Hoe</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="279">Rs. 279</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Hoe', 279, 'images1/hoe.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="Katek Fertilizer" src="images1/katek fertilizer.jpg">
+                <strong>Katek fertilizer</strong>
+                <span class="quantity">10 kgs</span>
+                <span class="price" data-price="700">Rs. 700</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Katek Fertilizer', 700, 'images1/katek fertilizer.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Lawn meower" src="images1/lawn_meower.jpg">
+                <strong>Lawn meower</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="20000">Rs. 20000</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Lawn meower', 20000, 'images1/lawn_meower.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Pitchfork" src="images1/pitch_fork.png">
+                <strong>Pitchfork</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="249">Rs. 249</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Pitchfork', 249, 'images1/pitch_fork.png')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Scythe" src="images1/scythe.jpg">
+                <strong>Scythe</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="500">Rs. 500</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Scythe', 500, 'images1/scythe.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Shovel" src="images1/shovel.jpg">
+                <strong>Shovel</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="400">Rs. 400</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Shovel', 400, 'images1/shovel.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Sickle" src="images1/sickle.jpg">
+                <strong>Sickle</strong>
+                <span class="quantity">1 piece</span>
+                <span class="price" data-price="350">Rs. 350</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Sickle', 350, 'images1/sickle.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                <a class="like-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function addToCart(name, price, image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name, price, image, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(name + ' has been added to your cart!');
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+        }
+
+        // Update cart count on page load
+        window.onload = updateCartCount;
+    </script>
+
+    <button type="submit" class="btn">
+                        
+        <a href="Home Page HTML.html" style = 'color: white; text-decoration: none;'>
+            
+            Home
+        
+        </a>
+
+    </button>
+</body>
+</html>

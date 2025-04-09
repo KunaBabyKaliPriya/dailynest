@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Beauty Products</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5471644867.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Beauty Category Page CSS.css">
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\hp\Desktop\College\First Semester\Introduction To Web Technologies\Notepad ++ Files\Project\favicon.ico"/>
+    <style>
+        /* Basic styles for the cart icon */
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: 14px;
+        }
+        body {
+            position: relative; /* To position the cart icon */
+        }
+
+        .btn {
+            border-radius: 15px;
+            color: #fff;
+            padding: 8px 25px;
+            background-color: #4ccd6a;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .btn:hover {
+            color: #78d98f;
+            opacity: 0.8;
+            transition: 0.3s all ease-in;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="cart-icon" onclick="window.location.href='Shopping Cart HTML.html'">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <section id="popular-product">
+        <div class="product-heading">
+            <h2 class='fruits-heading'>Beauty Products</h2>
+        </div>
+        <div class="product-container">
+            <div class="product-box">
+                <img alt="Lakme Blush and Glow Face Wash" src="https://i.imgur.com/RulBeyf.jpg">
+                <strong>Lakme Blush and Glow Face Wash</strong>
+                <span class="quantity">100 g</span>
+                <span class="price" data-price="144">Rs. 144</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Lakme Blush and Glow Face Wash', 144, 'https://i.imgur.com/RulBeyf.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                
+            </div>
+            <div class="product-box">
+                <img alt="Ponds Men Pollution Out Facewash" src="https://i.imgur.com/azJYLRo.jpg">
+                <strong>Ponds Men Pollution Out Facewash</strong>
+                <span class="quantity">100 g</span>
+                <span class="price" data-price="159">Rs. 159</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Ponds Men Pollution Out Facewash', 159, 'https://i.imgur.com/azJYLRo.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                
+            </div>
+            <div class="product-box">
+                <img alt="Nivea Body Milk" src="https://i.imgur.com/XroaNlX.jpg">
+                <strong>Nivea Body Milk</strong>
+                <span class="quantity">200 ml</span>
+                <span class="price" data-price="178">Rs. 178</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Nivea Body Milk', 178, 'https://i.imgur.com/XroaNlX.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                
+            </div>
+            <div class="product-box">
+                <img alt="Nivea Lip Balm" src="https://i.imgur.com/0eK7qXj.jpg">
+                <strong>Nivea Lip Balm</strong>
+                <span class="quantity">1</span>
+                <span class="price" data-price="151">Rs. 151</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Nivea Lip Balm', 151, 'https://i.imgur.com/0eK7qXj.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                
+            </div>
+            <div class="product-box">
+                <img alt="Berado Hair Growth Oil" src="https://i.imgur.com/qnTjfBG.jpg">
+                <strong>Berado Hair Growth Oil</strong>
+                <span class="quantity">50 ml</span>
+                <span class="price" data-price="585">Rs. 585</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Berado Hair Growth Oil', 585, 'https://i.imgur.com/qnTjfBG.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+                
+            </div>
+            <div class="product-box">
+                <img alt="Olay Total Effects Day Cream" src="https://i.imgur.com/Hmo66oR.jpg">
+                <strong>Olay Total Effects Day Cream</strong>
+                <span class="quantity">50 g</span>
+                <span class="price" data-price="749">Rs. 749</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Olay Total Effects Day Cream', 749, 'https://i.imgur.com/Hmo66oR.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="CERAVE_bodymoisturizer" src="images1/CERAVE_bodymoisturizer.jpg">
+                <strong>CERAVE_bodymoisturizer</strong>
+                <span class="quantity">500 ML</span>
+                <span class="price" data-price="499">Rs. 499</span>
+                <a href="#" class="cart-btn" onclick="addToCart('CERAVE_bodymoisturizer', 499, 'images1/CERAVE_bodymoisturizer.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="Cerave_facecleanser" src="images1/cerave_facecleanser.jpg">
+                <strong>Cerave_facecleanser</strong>
+                <span class="quantity">250 ML </span>
+                <span class="price" data-price="349">Rs. 349</span>
+                <a href="#" class="cart-btn" onclick="addToCart('Cerave_facecleanser', 349, 'images1/cerave_facecleanser.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="lunaty faceserum" src="images1/lunaty faceserum.png">
+                <strong>lunaty faceserum</strong>
+                <span class="quantity">500 ML</span>
+                <span class="price" data-price="499">Rs. 499</span>
+                <a href="#" class="cart-btn" onclick="addToCart('lunaty faceserum', 499, 'images1/lunaty faceserum.png')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+            <div class="product-box">
+                <img alt="lipstcik" src="images1/lipstcik.png">
+                <strong>lipstcik</strong>
+                <span class="quantity">SET OF 3</span>
+                <span class="price" data-price="299">Rs. 299</span>
+                <a href="#" class="cart-btn" onclick="addToCart('lipstcik', 299, 'images1/lipstcik.png')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="sunscreen" src="images1/sunscreen_50SPF.png">
+                <strong>sunscreen</strong>
+                <span class="quantity">1</span>
+                <span class="price" data-price="499">Rs. 499</span>
+                <a href="#" class="cart-btn" onclick="addToCart('sunscreen', 499, 'images1/sunscreen_50SPF.png')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+
+            <div class="product-box">
+                <img alt="dove body_wash" src="images1/dove body_wash.jpg">
+                <strong>dove body_wash</strong>
+                <span class="quantity">500 ML</span>
+                <span class="price" data-price="699">Rs. 699</span>
+                <a href="#" class="cart-btn" onclick="addToCart('dove body_wash', 699, 'images1/dove body_wash.jpg')">
+                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function addToCart(name, price, image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name, price, image, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(name + ' has been added to your cart!');
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+        }
+
+        // Update cart count on page load
+        window.onload = updateCartCount;
+    </script>
+
+    <button type="submit" class="btn">
+                            
+        <a href="Home Page HTML.html" style = 'color: white; text-decoration: none;'>
+            
+            Home
+        
+        </a>
+
+    </button>
+</body>
+</html>
