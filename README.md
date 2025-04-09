@@ -61,12 +61,9 @@
 ## 🙋‍♂️ Contributors
 
 - First Year B-TECH Students – 2024 Batch
-- ---
-1.Kuna Baby Kali Priya
----
-2.Reddy Srija
----
-3.Sai Krishna
+1.Kuna Baby Kali Priya.
+2.Reddy Srija.
+3.Sai Krishna.
 
 ---
 
